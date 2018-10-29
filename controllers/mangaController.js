@@ -4,13 +4,12 @@ function indexRoute(req, res) {
   // Find all the Mangas, then render an ejs file:
   // Find returns an array
   Manga.find().then(function(result) {
+    console.log('this is the index result => ', result);
     const mangaObject = {
       mangas: result
     };
     res.render('mangas/index', mangaObject);
   });
-  // This is what we previously did:
-  // res.render('cocktails/index', cocktailObject);
 }
 
 function newRoute(req, res) {
@@ -24,20 +23,15 @@ function createRoute(req, res) {
 
 function showRoute(req, res) {
   console.log('req.params is', req.params);
-  // Get a cocktail out of the database, using its ID
-  // Get a particular cocktail then render an ejs file
-  Manga.findById(req.params.id).then(result => {
-    res.render('mangas/show', result);
-  });
-  // Here's what we did earlier
-  // const cocktail = cocktailObject.cocktails.filter(cocktail =>
-  //   cocktail.id === req.params.id)[0];
-  // res.render('cocktails/show', cocktail);
+  Manga.findById(req.params.id)
+    .populate('characters')
+    .then(result => {
+      res.render('mangas/show', result);
+    });
 }
 
 function updateRoute(req, res) {
-  // req.params.id is the id of the cocktail we are trying
-  // to update
+
   console.log(`Updating manga id ${req.params.id}`, req.body);
   // Let's update the database using the model and the new data:
   Manga.findByIdAndUpdate(req.params.id, req.body)

@@ -6,6 +6,13 @@ const characterSchema = mongoose.Schema({
   characterDetails: String
 
 });
-const characterModel = mongoose.model('Character', characterSchema);
 
-module.exports = characterModel;
+
+characterSchema.virtual('addedCharacters', {
+  ref: 'Character',
+  localField: '_id',
+  foreignField: 'characters'
+});
+
+
+module.exports = mongoose.model('Character', characterSchema);
