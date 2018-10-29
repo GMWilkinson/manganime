@@ -1,0 +1,13 @@
+<main>
+  <h1>The Manga Book</h1>
+  <div class="columns">
+    <% mangas.forEach(manga => {%>
+      <div class="column">
+        <a href="/mangas/<%= manga.id %>">
+        <img height="300px" width="300px" src="<%= manga.bookCover %>">
+        <h3><%= manga.book %></h3>
+        <h3>Written by <%= manga.author %></h3>
+      </div>
+    <% }) %>
+  </div>
+</main>

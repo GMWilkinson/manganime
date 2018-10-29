@@ -1,0 +1,57 @@
+<form action="/mangas" method="post">
+  <div class="">
+    <label for="book">Title:</label>
+    <input name="book" id="title" placeholder="e.g. Attack on Titan">
+  </div>
+  <div class="">
+    <label for="bookCover">Image (URL)</label>
+    <input type="url " name="bookCover" id="bookCover" placeholder="http://...">
+  </div>
+  <div class="">
+    <label for="author">Author</label>
+    <input name="author" id="author" placeholder="e.g Jim Bobson">
+  </div>
+  <section class="columns">
+    <div class="column columns">
+      <div class="column">
+        <label for="characterName">Character name</label><br>
+        <input name="characterName" id="character1Name" placeholder=""><br>
+        <label for="characterImage">Character image</label><br>
+        <input type="url" name="characterImage" id="characterImage" placeholder=""><br>
+        <label for="character1Details">Character details</label><br>
+        <textarea rows="8" columns="80" type="text" name="characterDetails" value=""></textarea>
+      </div>
+    </div>
+    <%# <div class="column columns">
+      <div class="column">
+        <label for="character2Name">Character name</label><br>
+        <input name="character2Name" id="character2Name" placeholder=""><br>
+        <label for="character2Image">Character image</label><br>
+        <input type="url" name="character2Image" id="character2Image" placeholder=""><br>
+        <label for="character2Details">Character details</label><br>
+        <textarea rows="8" columns="80" type="text" name="character2Details" value=""></textarea>
+      </div>
+    </div>
+    <div class="column columns">
+      <div class="column">
+        <label for="character3Name">Character name</label><br>
+        <input name="character3Name" id="character3Name" placeholder=""><br>
+        <label for="character3Image">Character image</label><br>
+        <input type="url" name="character3Image" id="character3Image" placeholder=""><br>
+        <label for="character3Details">Character details</label><br>
+        <textarea rows="8" columns="80" type="text" name="character3Details" value=""></textarea>
+      </div>
+    </div>
+    <div class="column columns">
+      <div class="column">
+        <label for="character4Name">Character name</label><br>
+        <input name="character4Name" id="character4Name" placeholder=""><br>
+        <label for="character4Image">Character image</label><br>
+        <input type="url" name="character4Image" id="character4Image" placeholder=""><br>
+        <label for="character4Details">Character details</label><br>
+        <textarea rows="8" columns="80" type="text" name="character4Details" value=""></textarea>
+      </div>
+    </div> %>
+</section>
+  <button class="">Add a review</button>
+</form>

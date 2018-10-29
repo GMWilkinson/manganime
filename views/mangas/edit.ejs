@@ -1,0 +1,15 @@
+<form action="/mangas/<%= _id %>?_method=PUT" method="post">
+  <div class="control">
+    <label for="book">Title:</label>
+    <input name="book" value="<%= book %>" id="book">
+  </div>
+  <div class="control">
+    <label for="bookCover">Image (URL)</label>
+    <input name="bookCover" value="<%= bookCover %>" id="bookCover">
+  </div>
+  <div class="control">
+    <label for="author">Price</label>
+    <input name="author" value="<%= author %>" id="author">
+  </div>
+  <button>Update my cocktail!</button>
+</form>

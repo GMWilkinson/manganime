@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Manganime</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/mangas/new">Add a review</a></li>
+          <li><a href="/mangas">Find a review</a></li>
+          <% if (locals.isLoggedIn) { %>
+            <li><a href="/logout">Log out <%= locals.currentUser.username %></a></li>
+          <% } else { %>
+            <li><a href="/login">Log In</a></li>
+            <li><a href="/register">Register</a></li>
+          <% } %>
+        </ul>
+      </nav>
+    </header>
+
+    <%- body %>
+
+    <footer>
+      <p>Made by GrantMW</p>
+    </footer>
+  </body>
+</html>

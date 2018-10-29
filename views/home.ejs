@@ -1,0 +1,7 @@
+<h1>Welcome to Manga Book</h1>
+<h2>Where you can find and rate all your favorite manga's and anime's</h2>
+<% if (locals.isLoggedIn) { %>
+  <p>Welcome back <%= locals.currentUser.username %></p>
+<% } else { %>
+  <p>Why not register to add your own favorites and review others</p>
+<% }%>

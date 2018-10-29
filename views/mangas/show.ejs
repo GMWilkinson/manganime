@@ -1,0 +1,65 @@
+<main>
+  <section class="columns">
+    <div class="column is-4 t-a">
+      <h1 class="book"><%= book %></h1>
+      <p class="author">Written by <%= author %></p>
+    </div>
+    <img class="show-image column is-7" src="<%= bookCover %>"/>
+    <div class="column is-1"></div>
+  </section>
+    <p>Characters:</p>
+    <section class="columns">
+      <div class="column is-3">
+        <p class="char-name"><%= character1Name %></p>
+        <p class="image is-square"><img src="<%= character1Image %>"></p>
+        <p class="char-details"><%= character1Details %></p>
+      </div>
+      <div class="column is-3">
+        <p class="char-name"><%= character2Name %></p>
+        <p class="image is-square"><img src="<%= character2Image %>"></p>
+        <p class="char-details"><%= character2Details %></p>
+      </div>
+      <div class="column is-3">
+        <p class="char-name"><%= character3Name %></p>
+        <p class="image is-square"><img src="<%= character3Image %>"></p>
+        <p class="char-details"><%= character3Details %></p>
+      </div>
+      <div class="column is-3">
+        <p class="char-name"><%= character4Name %></p>
+        <p class="image is-square"><img src="<%= character4Image %>"></p>
+        <p class="char-details"><%= character4Details %></p></span>
+      </div>
+    </section>
+  <% if (locals.isLoggedIn) { %>
+    <div class="buttons">
+    <form action="/mangas/<%= _id %>?_method=DELETE" method="post">
+    <button class="button">Delete</button>
+    </form>
+    <a class="button" href="/mangas/<%= _id %>/edit">Edit</a>
+    </div>
+    <div>
+      <% ratings.forEach(rating => { %>
+        <div>
+          <span style="font-weight: bold;"><%= rating.username %></span>
+          <span><%= rating.score %></span>
+        </div>
+        <div>
+          <span><%= rating.comment %></span>
+          <span>
+            <form method="POST" action="/mangas/<%= _id %>/ratings/<%= rating._id %>?_method=DELETE">
+              <button>x</button>
+            </form>
+          </span>
+        </div>
+      <% }) %>
+    </div>
+    <div>
+      <form method="POST" action="/mangas/<%= _id %>/ratings">
+        <textarea name="comment"></textarea>
+        <input name="username" type="hidden" value="<%= locals.currentUser.username %>"/>
+        <input name="score" type="number" min="0" max="5"/>
+        <button>Rate this cocktail</button>
+      </form>
+    </div>
+  <% } %>
+</main>

@@ -1,0 +1,34 @@
+body {
+  background-color: hotpink;
+}
+header {
+  background-color: papayawhip;
+}
+footer {
+  background-color: papayawhip;
+}
+/* .char-img {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  background-color: blue;
+} */
+/* .t-a {
+  margin: auto;
+  text-align: center;
+} */
+.book {
+  font-size: 5em;
+  padding: 10%;
+}
+.author {
+  font-size: 3em;
+}
+.char-name {
+  font-size: 2em;
+  text-align: center;
+}
+.char-details {
+  font-size: 1.5em;
+  text-align: center;
+}
