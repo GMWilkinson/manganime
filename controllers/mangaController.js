@@ -18,25 +18,21 @@ function newRoute(req, res) {
 
 function createRoute(req, res) {
   Manga.create(req.body)
-    .then(result => res.redirect(`/mangas/${result._id}`));
+    .then(result =>  res.redirect(`/mangas/${result._id}`));
 }
 
 function showRoute(req, res) {
   console.log('req.params is', req.params);
   Manga.findById(req.params.id)
-    .populate('characters')
     .then(result => {
       res.render('mangas/show', result);
     });
 }
 
 function updateRoute(req, res) {
-
   console.log(`Updating manga id ${req.params.id}`, req.body);
-  // Let's update the database using the model and the new data:
   Manga.findByIdAndUpdate(req.params.id, req.body)
     .then(() => {
-      // Redirect to the index (for now!)
       res.redirect('/mangas');
     });
 }

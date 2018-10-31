@@ -14,10 +14,8 @@ router.post('/login', authController.loginRoute);
 
 router.get('/logout', authController.logoutRoute);
 
-// Render the layout.ejs file when the user requests the home page
 router.get('/', function(req, res) {
-  // EJS files in a 'views' folder are the default:
-  res.render('home'); // An empty object = no data
+  res.render('home');
 });
 
 // Load the about page
@@ -47,19 +45,18 @@ router.delete('/mangas/:id', secureRoute, mangaController.deleteRoute);
 // router.delete('/mangas/:id', secureRoute, characterController.deleteRoute);
 // Rating CREATE route
 router.post('/mangas/:mangaId/ratings', secureRoute, ratingController.createRoute);
-
+router.post('/mangas/:mangaId/characters', secureRoute, characterController.createRoute);
 // router.route('/mangas/new')
 //   .get(characterController.new);
 
-router.route('/mangas/:id')
-  .post(characterController.create);
-
-router.route('/mangas/:id')
-  .get(characterController.show);
+//
+// router.route('/mangas/:id')
+//   .get(characterController.show);
 
 
+router.delete('/mangas/:mangaId/characters/:characterId', secureRoute,
+  characterController.deleteRoute);
 
-// Rating DELETE route
 router.delete('/mangas/:mangaId/ratings/:ratingId', secureRoute,
   ratingController.deleteRoute);
 

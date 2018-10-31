@@ -1,25 +1,33 @@
-const Character = require('../models/character');
+const Char = require('../models/manga');
 
-function characterShow(req, res, next) {
-  Character
-    .findById(req.params.id)
-    .populate('addedCharacters')
+// function createRoute(req, res) {
+//   Character.create(req.body);
+//   Character.save()
+//     .then(result =>  res.redirect(`/mangas/${result._id}`));
+// }
+
+function createRoute(req, res) {
+  Char.findById(req.params.mangaId)
     .then(character => {
-      console.log(character.characterName);
-      res.render('', character);
-    })
-    .catch(err => {
-      console.log('There was an error', err);
-      next();
+      console.log('Creating a character!', character, req.body);
+      character.characters.push(req.body);
+      character.save().then(() => res.redirect('/mangas'));
     });
 }
 
-function characterCreate(req, res) {
-  Character.create(req.body)
-    .then(res.redirect('/mangas/show'));
+function deleteRoute(req, res) {
+  console.log('Deleting rating', req.params.ratingId);
+  // Redirect to the SHOW page
+  Char.findById(req.params.mangaId)
+    .then(character => {
+      character.characters.id(req.params.characterId).remove();
+      character.save()
+        .then(() => res.redirect(`/mangas/${req.params.mangaId}`));
+    });
 }
 
+
 module.exports = {
-  show: characterShow,
-  create: characterCreate
+  createRoute: createRoute,
+  deleteRoute: deleteRoute
 };

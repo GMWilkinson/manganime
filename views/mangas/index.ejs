@@ -1,5 +1,10 @@
 <main>
-  <h1>The Manga Book</h1>
+  <h1 class="h1">The Manga Book</h1>
+  <% if (locals.isLoggedIn) { %>
+    <h3>Hello <%= locals.currentUser.username %></h3>
+  <% } else { %>
+    <h3>Login or register to get full access</h3>
+    <% } %>
   <div class="columns">
     <% mangas.forEach(manga => {%>
       <div class="column">

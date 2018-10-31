@@ -7,8 +7,16 @@ header {
 footer {
   background-color: papayawhip;
 }
+.h1 {
+  text-align: center;
+  font-size: 3em;
+}
 .main-body {
   height: 100%;
+  margin: 10%;
+}
+.round {
+  border-radius: 50%;
 }
 /* .char-img {
   width: 100%;

@@ -4,7 +4,13 @@ const mangaSchema = mongoose.Schema({
   book: String,
   author: String,
   bookCover: String,
-  characters: { type: mongoose.Schema.ObjectId, ref: 'Character' },
+  characters: [
+    {
+      name: String,
+      image: String,
+      details: String
+    }
+  ],
   ratings: [
     {
       comment: String,

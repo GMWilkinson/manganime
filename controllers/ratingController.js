@@ -11,12 +11,10 @@ function createRoute(req, res) {
 
 function deleteRoute(req, res) {
   console.log('Deleting rating', req.params.ratingId);
-  // Redirect to the SHOW page
   Manga.findById(req.params.mangaId)
     .then(manga => {
-      // Find the rating by ID and remove it
-      // .id here is a function:
       manga.ratings.id(req.params.ratingId).remove();
+
       manga.save()
         .then(() => res.redirect(`/mangas/${req.params.mangaId}`));
     });
