@@ -3,24 +3,25 @@
   <head>
     <meta charset="utf-8">
     <title>Manganime</title>
-    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poor+Story" rel="stylesheet">
   </head>
   <body>
     <header>
-      <nav>
-        <ul>
-          <li><a href="/about">About</a></li>
-          <li><a href="/">Home</a></li>
-          <li><a href="/mangas/new">Add a review</a></li>
-          <li><a href="/mangas">Find a review</a></li>
+      <nav class="navbar is-fixed nav-style is-dark">
+        <div class="navbar-end">
+          <a href="/about" class="navbar-item nav-col">About</a>
+          <a href="/" class="navbar-item nav-col">Home</a>
+          <a href="/mangas/new" class="navbar-item nav-col">Add a review</a>
+          <a href="/mangas" class="navbar-item nav-col">Find a review</a>
           <% if (locals.isLoggedIn) { %>
-            <li><a href="/logout">Log out <%= locals.currentUser.username %></a></li>
+            <a href="/logout" class="navbar-item nav-col">Log out <%= locals.currentUser.username %></a>
           <% } else { %>
-            <li><a href="/login">Log In</a></li>
-            <li><a href="/register">Register</a></li>
+            <a href="/login" class="navbar-item nav-col">Log In</a>
+            <a href="/register" class="navbar-item nav-col">Register</a>
           <% } %>
-        </ul>
+        </div>
       </nav>
     </header>
     <main class="main-body">
@@ -28,8 +29,10 @@
     <%- body %>
 
     </main>
-    <footer>
-      <p>Made by GrantMW</p>
+    <footer class="foot">
+      <div class="content has-text-centered">
+        <p>Made by GrantMW</p>
+      </div>
     </footer>
   </body>
 </html>

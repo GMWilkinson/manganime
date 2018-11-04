@@ -1,62 +1,88 @@
 <main>
   <section class="columns">
-    <div class="column is-4 t-a">
+    <div class="column is-5 t-a">
       <h1 class="book"><%= book %></h1>
-      <p class="author">Written by <%= author %></p>
+      <p class="author">Written and drawn by <%= author %></p>
+      <p class="review"><%= review %></p>
     </div>
     <img class="show-image column is-7" src="<%= bookCover %>"/>
     <div class=" is-1"></div>
   </section>
   <section>
-    <div class="columns ">
+    <div class="columns">
     <div class="columns is-multiline column is-12">
       <% characters.forEach(character => { %>
-      <div class="column is-12">
-      <p class="column"><%=character.name %></p>
-      <img class="image is-128x128 round" src ="<%=character.image %>">
-      <p class=""><%=character.details %></p>
+      <div class="column is-4 chars">
+      <p class="char-det"><%=character.name %></p>
+      <img class="image is-128x128 round det-display" src ="<%=character.image %>">
+      <p class="char-det details"><%=character.details %></p>
       <form method="POST" action="/mangas/<%= _id %>/characters/<%= character._id %>?_method=DELETE">
-      <button class="button">Delete</button>
+      <button class="button char-det">X</button>
       </div>
     </form>
       <% }) %>
     </div>
   </div>
   </section>
+  <article class="  ">
+    <form method="POST" action="/mangas/<%= _id %>/ratings">
+      <div>
+      <label class="label" for="username"></label>
+        <input class="input" name="username" type="hidden" value="<%= locals.currentUser.username %>"/>
+        <label class="label" for="score">Rating</label>
+        <input class="input" name="score" type="number" min="0" max="10"/>
+      </div>
+      <div>
+        <p>
+          <label class="label" for="textarea">Comments</label>
+          <textarea class="textarea" name="comment"></textarea>
+        </p>
+        <button>Rate</button>
+      </div>
+    </form>
+  </article>
+  <form action="/mangas/<%= _id %>?_method=DELETE" method="post">
+  <button class="button">Delete</button>
+  </form>
   <section class="">
   <% if (locals.isLoggedIn) { %>
     <div class="buttons">
-    <form action="/mangas/<%= _id %>?_method=DELETE" method="post">
-    <button class="button">Delete</button>
-    </form>
     <a class="button" href="/mangas/<%= _id %>/edit">Edit</a>
     </div>
-    <article class="media  ">
-    <div>
+    <article class="">
+
       <% ratings.forEach(rating => { %>
-        <div>
-          <span style="font-weight: bold;"><%= rating.username %></span>
-          <span><%= rating.score %></span>
+        <div class="box columns box-margin">
+          <div class="column is-3">
+            <p><%= locals.currentUser.username %></p>
+            <span><%= rating.username %></span>
+          </div>
+          <div class="column is-7">
+            <span><%= rating.comment %></span>
+          </div>
+          <div class="column is-2">
+            <span>Score <%= rating.score %></span>
+          </div>
+            <span>
+              <form class="x" method="POST" action="/mangas/<%= _id %>/ratings/<%= rating._id %>?_method=DELETE">
+                <button>x</button>
         </div>
-          <span><%= rating.comment %></span>
-          <span>
-            <form method="POST" action="/mangas/<%= _id %>/ratings/<%= rating._id %>?_method=DELETE">
-              <button>x</button>
             </form>
           </span>
+        </div>
         </div>
       <% }) %>
     </div>
     </article>
     <section class="">
       <form action="/mangas/<%= _id %>/characters" method="POST">
-        <div class=" ">
-          <div class="">
-            <label for="name">Character name</label><br>
-            <input name="name" id="characterName" placeholder=""><br>
-            <label for="image">Character image</label><br>
-            <input type="url" name="image" id="characterImage" placeholder=""><br>
-            <label for="details">Character details</label><br>
+        <div class="">
+          <div class=""><br>
+            <label class="label" for="name">Character name</label><br>
+            <input class="input" name="name" id="characterName" placeholder=""><br>
+            <label class="label" for="image">Character image</label><br>
+            <input class="input" type="url" name="image" id="characterImage" placeholder=""><br>
+            <label class="label" for="details">Character details</label><br>
             <textarea class="textarea" type="text" name="details" value=""></textarea>
           </div>
         </div>
@@ -64,23 +90,7 @@
       </form>
 
     </section>
-    <article class="media  ">
-      <form method="POST" action="/mangas/<%= _id %>/ratings">
-        <div class="media-left ">
-        <label for="username">User</label>
-          <input name="username" type="hidden" value="<%= locals.currentUser.username %>"/>
-          <label for="score">Rating</label>
-          <input name="score" type="number" min="0" max="10"/>
-        </div>
-        <div class="media-content media-right">
-          <p class="control">
-            <label for="textarea">Comments</label>
-            <textarea class="textarea" name="comment"></textarea>
-          </p>
-          <button>Rate</button>
-        </div>
-      </form>
-    </article>
+
   <% } %>
 
 </main>

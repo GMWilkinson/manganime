@@ -4,6 +4,7 @@ const mangaSchema = mongoose.Schema({
   book: String,
   author: String,
   bookCover: String,
+  review: String,
   characters: [
     {
       name: String,

@@ -1,22 +1,48 @@
 body {
-  background-color: hotpink;
+  /* background-color: black; */
+  color: maroon;
+  background-image: url('https://img1.n3rdabl3.co.uk/wp-content/images/uploads/2016/06/32461_berserk.jpg');
+  background-size: cover;
+  font-family: 'Poor Story', cursive;
 }
-header {
-  background-color: papayawhip;
+.nav-style {
+  height: 140px;
+  background-image: url('https://www.filmofilia.com/wp-content/uploads/2012/08/berserk-banner.jpg');
+  background-size: cover;
+  font-size: 24px;
 }
+.nav-col:hover {
+   color: maroon;
+}
+
 footer {
-  background-color: papayawhip;
+  background-image: url('https://www.filmofilia.com/wp-content/uploads/2012/08/berserk-banner.jpg');
+  background-size: cover;
 }
-.h1 {
+h1 {
   text-align: center;
-  font-size: 3em;
+  font-size: 4em;
+  font-family: 'Poor Story', cursive;
+  color: maroon;
+  background-size: cover;
+  background-position: center;
+  background-color: white;
+}
+label {
+  font-size: 40px;
+}
+p {
+  font-size: 30px;
 }
 .main-body {
-  height: 100%;
   margin: 10%;
 }
 .round {
   border-radius: 50%;
+  margin: auto;
+}
+.char-det {
+  text-align: center;
 }
 /* .char-img {
   width: 100%;
@@ -32,8 +58,20 @@ footer {
   font-size: 5em;
   padding: 10%;
 }
+.home-bod {
+  width: 100%;
+  height: 100%;
+}
+/* .home-img {
+  width: 100%;
+  height: 100%;
+} */
 .author {
   font-size: 3em;
+  text-align: center;
+}
+.review {
+  margin: 10% auto;
 }
 .char-name {
   font-size: 2em;
@@ -42,4 +80,52 @@ footer {
 .char-details {
   font-size: 1.5em;
   text-align: center;
+}
+.chars {
+  margin: auto;
+}
+.username {
+  background-color: grey;
+}
+.box-margin {
+  margin: 10px;
+}
+.x {
+  margin-right: 20px
+}
+/* .image-index {
+  border: 5px solid maroon;
+} */
+button {
+  margin-top: 10px;
+}
+@media (max-width: 600px) {
+  .nav-style {
+    padding-top: 20px;
+    height: 300px;
+      }
+  .nav-col {
+    color: white;
+    text-align: right;
+  }
+  p {
+    font-size: 1em;
+  }
+  .h1 {
+    font-size: 3em;
+  }
+  h3 {
+    font-size: 2em;
+  }
+}
+@media (max-width: 990px) {
+  .nav-style {
+    padding-top: 35px;
+    height: 340px;
+    font-size: 1.5em;
+  }
+}
+.foot {
+  height: 100px;
+
 }

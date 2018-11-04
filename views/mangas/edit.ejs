@@ -3,17 +3,20 @@
 <form action="/mangas/<%= _id %>?_method=PUT" method="post">
 
   <div class="control">
-    <label for="book">Title:</label>
-    <input name="book" value="<%= book %>" id="book">
+    <label class="label" for="book">Title:</label>
+    <input class="input" name="book" value="<%= book %>" id="book">
   </div>
   <div class="control">
-    <label for="bookCover">Image (URL)</label>
-    <input name="bookCover" value="<%= bookCover %>" id="bookCover">
+    <label class="label" for="bookCover">Image (URL)</label>
+    <input class="input" name="bookCover" value="<%= bookCover %>" id="bookCover">
   </div>
   <div class="control">
-    <label for="author">Author</label>
-    <input name="author" value="<%= author %>" id="author">
+    <label class="label" for="author">Author</label>
+    <input class="input" name="author" value="<%= author %>" id="author">
   </div>
-  
+  <div class="control">
+    <label class="label" for="review">Review</label>
+    <textarea class="textarea" name="review" value="<%= review %>" id="review"></textarea>
+  </div>
   <button>Update</button>
 </form>

@@ -1,15 +1,19 @@
 <main>
-  <h1 class="h1">The Manga Book</h1>
+  <div class="columns">
+    <h1 class="h1 column is-6">The Manga Book</h1>
+  </div>
   <% if (locals.isLoggedIn) { %>
     <h3>Hello <%= locals.currentUser.username %></h3>
   <% } else { %>
     <h3>Login or register to get full access</h3>
     <% } %>
-  <div class="columns">
+    <div class="columns">
+  <div class="columns is-multiline column is-8">
+
     <% mangas.forEach(manga => {%>
-      <div class="column">
+      <div class="column is-3">
         <a href="/mangas/<%= manga.id %>">
-        <img height="300px" width="300px" src="<%= manga.bookCover %>">
+        <img class="image-index" height="300px" width="300px" src="<%= manga.bookCover %>">
         <h3><%= manga.book %></h3>
         <h3>Written by <%= manga.author %></h3>
       </div>

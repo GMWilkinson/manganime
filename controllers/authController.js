@@ -32,9 +32,7 @@ function loginRoute(req, res) {
         // If there is no user
         res.redirect('/login');
       } else {
-        // We've found a user in the database! Write the user's
-        // ID into their locker (session).
-        // (req.session is the locker)
+
         req.session.userId = result._id;
         res.redirect('/');
       }
