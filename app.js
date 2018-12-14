@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 const env = require('./config/environment');
 const router = require('./config/routes');
 
-mongoose.connect(env.dbUri);
+mongoose.connect(env.dbURI);
 
 const app = express();
 
