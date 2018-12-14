@@ -14,7 +14,9 @@ body {
 .nav-col:hover {
    color: maroon;
 }
-
+.show-image {
+  margin: auto;
+}
 footer {
   background-image: url('https://www.filmofilia.com/wp-content/uploads/2012/08/berserk-banner.jpg');
   background-size: cover;

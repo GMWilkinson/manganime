@@ -7,5 +7,10 @@
     "express-session": "^1.15.6",
     "method-override": "^3.0.0",
     "mongoose": "^5.3.7"
+  },
+  "scripts": {
+    "start": "node index",
+    "build": "webpack -p",
+    "start": "yarn build && node index"
   }
 }
