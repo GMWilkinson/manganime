@@ -2,6 +2,7 @@ body {
   color: maroon;
   background-image: url('https://img1.n3rdabl3.co.uk/wp-content/images/uploads/2016/06/32461_berserk.jpg');
   background-size: cover;
+  background-attachment: fixed;
   font-family: 'Poor Story', cursive;
 }
 .about-text {
@@ -44,7 +45,6 @@ h2 {
 }
 .main-body {
   margin: 10%;
-  min-height: 1000px;
 }
 .round {
   border-radius: 50%;
@@ -115,6 +115,7 @@ button {
     padding-top: 35px;
     height: 340px;
     font-size: 1.5em;
+    min-height: 800px;
   }
 }
 .foot {
