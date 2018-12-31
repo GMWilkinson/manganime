@@ -20,9 +20,6 @@ const mangaSchema = mongoose.Schema({
     }
   ]
 });
+
 const mangaModel = mongoose.model('Manga', mangaSchema);
 module.exports = mangaModel;
-
-
-
-// { type: mongoose.Schema.ObjectId, ref: 'Character' },

@@ -1,11 +1,5 @@
 const Char = require('../models/manga');
 
-// function createRoute(req, res) {
-//   Character.create(req.body);
-//   Character.save()
-//     .then(result =>  res.redirect(`/mangas/${result._id}`));
-// }
-
 function createRoute(req, res) {
   Char.findById(req.params.mangaId)
     .then(character => {
@@ -17,7 +11,6 @@ function createRoute(req, res) {
 
 function deleteRoute(req, res) {
   console.log('Deleting rating', req.params.ratingId);
-  // Redirect to the SHOW page
   Char.findById(req.params.mangaId)
     .then(character => {
       character.characters.id(req.params.characterId).remove();

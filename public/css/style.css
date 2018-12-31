@@ -67,18 +67,20 @@ h2 {
 }
 .review {
   margin: 10% auto;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 .char-name {
   font-size: 2em;
   text-align: center;
 }
 .char-details {
-  font-size: 1.5em;
+  font-size: 23px;
   text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
 }
-.chars {
+/* .chars {
   margin: auto;
-}
+} */
 .username {
   background-color: grey;
 }
@@ -94,7 +96,7 @@ button {
 @media (max-width: 600px) {
   .nav-style {
     padding-top: 20px;
-    height: 300px;
+    height: 100px;
       }
   .nav-col {
     color: white;
@@ -120,5 +122,4 @@ button {
 }
 .foot {
   height: 100px;
-
 }

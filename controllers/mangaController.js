@@ -1,8 +1,6 @@
 const Manga = require('../models/manga');
 
 function indexRoute(req, res) {
-  // Find all the Mangas, then render an ejs file:
-  // Find returns an array
   Manga.find().then(function(result) {
     console.log('this is the index result => ', result);
     const mangaObject = {
@@ -38,9 +36,6 @@ function updateRoute(req, res) {
 }
 
 function editRoute(req, res) {
-  // First get the Manga from the database
-  // findById returns an object, so we can hand it straight
-  // into the EJS file.
   Manga.findById(req.params.id)
     .then(result => {
       res.render('mangas/edit', result);
