@@ -4,6 +4,7 @@ body {
   background-size: cover;
   background-attachment: fixed;
   font-family: 'Poor Story', cursive;
+  min-height: 880px;
 }
 .about-text {
   text-align: left;
@@ -116,9 +117,8 @@ button {
 @media (max-width: 990px) {
   .nav-style {
     padding-top: 35px;
-    height: 340px;
+    height: 150px;
     font-size: 1.5em;
-    min-height: 800px;
   }
 }
 .foot {
