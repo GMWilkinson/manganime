@@ -98,7 +98,7 @@ button {
 @media (max-width: 600px) {
   .nav-style {
     padding-top: 20px;
-    height: 100px;
+    /* height: 100px; */
       }
   .nav-col {
     color: white;
