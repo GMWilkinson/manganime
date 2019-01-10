@@ -10,7 +10,7 @@ body {
   text-align: left;
 }
 .nav-style {
-  height: 140px;
+  /* height: 140px; */
   background-image: url('https://www.filmofilia.com/wp-content/uploads/2012/08/berserk-banner.jpg');
   background-size: cover;
   font-size: 24px;
