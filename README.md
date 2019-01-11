@@ -49,6 +49,12 @@ function createRoute(req, res) {
 
  It is on port 4000.
 
+# Challenges/Learnings
+
+* I didn't realise when I first made this project that you could have multiple controllers doing different things and found it really hard to get the characters to show on the 'show' page. But once I realised that I could have a separate controller just for the characters it became much easier
+* This was the first time that I had made a back-end for an app and at first struggled to understand how the router interacted with the controllers. But I now feel I have a much better understanding of how the controllers are exported to the router and the exported router is how the front-end interacts with the back-end
+* I was already familiar with models but never really understood the point until this project. Now, I realise their importance and how they really do represent real world objects
+
 # Bugs
 
 * If the user is not logged in when they click to go to a show page they get an internal server error
